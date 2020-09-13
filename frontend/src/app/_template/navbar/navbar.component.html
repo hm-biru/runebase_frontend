@@ -1,1 +1,42 @@
-<p>navbar works!</p>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand" href="/"><img src="../../../favicon.png"
+        width="30" height="30" alt="">Runebase</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li th:if="${administration}" class="nav-item"><i
+                class="fas fa-users"></i> <a class="nav-link" href="/users">Anwenderverwaltung</a>
+            </li>
+
+            <li th:if="${user}" class="nav-item"><i class="fas fa-tasks"></i><a
+                class="nav-link" href="/runes">Runen</a></li>
+
+            <li th:if="${user}" class="nav-item"><i
+                class="fas fa-clipboard-list"></i><a class="nav-link"
+                href="/settings">Settings </a></li>
+            <li th:if="${user}" class="nav-item"><i
+                class="fas fa-user-circle"></i> <a class="nav-link" href="/profil">Profil</a>
+            </li>
+        </ul>
+        <span th:if="${user}" class="nav-link">Sie sind eingeloggt
+            als <strong th:text=${user.displayName}></strong>
+        </span>
+        <form th:if="${user}" th:action="@{/logout}" method="post">
+            <button class="btn btn-secondary" type="submit">Abmelden</button>
+        </form>
+
+        <form th:unless="${user}" th:action="@{/login}" method="get">
+            <button class="btn btn-secondary" type="submit">Anmelden</button>
+        </form>
+    </div>
+</nav>
+
+</body>

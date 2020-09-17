@@ -8,6 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { RunesComponent } from './runes/runes.component';
 import { NavbarComponent } from './_template/navbar/navbar.component';
 import { SettingsComponent } from './settings/settings.component';
+import { UserCreateComponent } from './user-create/user-create.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { FormsModule } from '@angular/forms';
+import { UserService } from './service/user-service.service';
 
 @NgModule({
   declarations: [
@@ -15,14 +20,18 @@ import { SettingsComponent } from './settings/settings.component';
     HomeComponent,
     RunesComponent,
     NavbarComponent,
-    SettingsComponent
+    SettingsComponent,
+    UserCreateComponent,
+    UserListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

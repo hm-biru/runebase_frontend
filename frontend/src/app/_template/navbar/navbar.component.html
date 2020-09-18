@@ -36,6 +36,10 @@
         <form th:unless="${user}" th:action="@{/login}" method="get">
             <button class="btn btn-secondary" type="submit">Anmelden</button>
         </form>
+
+        <form th:if="${user}" th:action="@{/logout}" method="post">
+            <button class="btn btn-secondary" type="submit">Registrieren</button>
+        </form>
     </div>
 </nav>
 

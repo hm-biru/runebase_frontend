@@ -13,6 +13,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from './service/user-service.service';
+import { StartComponent } from './start/start.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { UserService } from './service/user-service.service';
     SettingsComponent,
     UserCreateComponent,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    StartComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

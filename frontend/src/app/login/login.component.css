@@ -210,7 +210,7 @@ iframe {
 }
 
 .login-background {
-	background: url(/assets/ziggs.jpg);
+	background: url(/assets/svg/ziggs.jpg);
 	height: 100vh;
 	background-position: center;
 	background-repeat: no-repeat;

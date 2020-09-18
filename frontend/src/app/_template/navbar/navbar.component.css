@@ -1,8 +1,39 @@
-* Weiße Navbar für Homepage */ 
-.custom-nav {
-	color:white;
+.navbar {
+    opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
-.custom-nav a {
-	color:white;
+.navbar-hide {
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Navbar*/
+
+.navbar {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+    /*1rem = 16px*/
+    letter-spacing: .1rem;
+    background: rgba(0, 0, 0, 0.1) !important;
+}
+
+.navbar-brand img {
+    border-radius: 13px;
+    height: 2.2rem;
+}
+
+.navbar-nav li {
+    padding-right: 0.7rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    padding-top: 0.8rem;
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #1a75ff;
 }

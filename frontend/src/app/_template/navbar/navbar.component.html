@@ -1,46 +1,24 @@
 <body>
-<nav class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" href="/"><img src="../../../favicon.png"
-        width="30" height="30" alt="">Runebase</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li th:if="${administration}" class="nav-item"><i
-                class="fas fa-users"></i> <a class="nav-link" href="/users">Anwenderverwaltung</a>
-            </li>
-
-            <li th:if="${user}" class="nav-item"><i class="fas fa-tasks"></i><a
-                class="nav-link" href="/runes">Runen</a></li>
-
-            <li th:if="${user}" class="nav-item"><i
-                class="fas fa-clipboard-list"></i><a class="nav-link"
-                href="/settings">Settings </a></li>
-            <li th:if="${user}" class="nav-item"><i
-                class="fas fa-user-circle"></i> <a class="nav-link" href="/profil">Profil</a>
-            </li>
-        </ul>
-        <span th:if="${user}" class="nav-link">Sie sind eingeloggt
-            als <strong th:text=${user.displayName}></strong>
-        </span>
-        <form th:if="${user}" th:action="@{/logout}" method="post">
-            <button class="btn btn-secondary" type="submit">Abmelden</button>
-        </form>
-
-        <form th:unless="${user}" th:action="@{/login}" method="get">
-            <button class="btn btn-secondary" type="submit">Anmelden</button>
-        </form>
-
-        <form th:if="${user}" th:action="@{/logout}" method="post">
-            <button class="btn btn-secondary" type="submit">Registrieren</button>
-        </form>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/"><img src="../../../favicon.png"
+            width="30" height="30" alt="">Runebase</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav align-items-center ml-auto">
+                <!-- schiebt navbar nach rechts-->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Runes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../photos/photos.html">Settings </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 </body>
